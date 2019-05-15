@@ -1,0 +1,67 @@
+﻿@model IEnumerable<hanamiSushiBar.Models.product>
+
+@{
+    ViewBag.Title = "Accueil";
+}
+
+<div class="jumbotron" id="jumbotron">
+    <div class="container" id="titleBG">
+        <div id="titleBlock">
+            <h1>HANAMI Sushi Bar</h1>
+            <p class="lead">Hanami Sushi Bar vous accueille dans son petit restaurant pour y savourer des spécialités japonaises comme les sushis d'une extrême fraîcheur. </p>
+            <p><a href="#meals" class="btn btn-success btn-lg">Nos plats &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="meals">
+    <div class="row">
+        <div class="col-lg-3 col-sm-10">
+            <img class="rounded-circle" src="~/images/sushiSaumon.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Sushis</h2>
+            <p>Plat japonais fait de riz assaisonné accompagné de lamelles de poisson cru.</p>
+            <p><a class="btn btn-success" href="#" role="button">Voir nos Sushis &raquo;</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-10">
+            <img class="rounded-circle" src="~/images/makisSaumonAvocat.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Makis et Californias</h2>
+            <p>Rouleau de riz enveloppé d'une feuille d'algue séchée, garni en son centre de poisson, d'omelette, etc.</p>
+            <p><a class="btn btn-success" href="#" role="button">Voir nos Makis &raquo;</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-10">
+            <img class="rounded-circle" src="~/images/sashimi_mix.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Sashimis</h2>
+            <p>Plat japonais fait de poisson cru en tranches fines.</p>
+            <p><a class="btn btn-success" href="#" role="button">Voir nos Sashimis &raquo;</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-10">
+            <img class="rounded-circle" src="~/images/brochettes.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Brochettes et Raviolis</h2>
+            <p>Plats chauds</p>
+            <p><a class="btn btn-success" href="#" role="button">Voir nos Brochettes &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Référence</th>
+        <th>Catégorie</th>
+        <th>Prix (€)</th>
+        <th> </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="tableFilter">
+            <td> <img src="@Url.Content(item.img_url)" width="100" height="100" /> </td>
+            <td class="h4 text-primary"> @Html.DisplayFor(modelItem => item.name) </td>
+            <td> @Html.DisplayFor(modelItem => item.details) </td>
+            <td> @Html.DisplayFor(modelItem => item.@ref) </td>
+            <td class="text-info"> @Html.DisplayFor(modelItem => item.categories.category) </td>
+            <td class="h3 text-primary"> @Html.DisplayFor(modelItem => item.price) </td>
+            <td> <button class="btn btn-success">Ajouter au Panier</button></td>
+        </tr>}
+</table>

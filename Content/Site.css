@@ -1,0 +1,95 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Différentes polices */
+@font-face {
+    font-family: 'MADEC___';
+    src: url('../fonts/MADEC___.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Moyko';
+    src: url('../fonts/Moyko.ttf') format('truetype');
+}
+/* Titres */
+.navbar-brand, h1, h3 {
+    font-family: MADEC___, Arial;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: Moyko, Arial;
+}
+
+#logoSushi {
+    margin-right: 1em;
+}
+#shop
+{
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Accueil */
+.jumbotron {
+    background-image: url('../images/japanese-banner.jpg');
+    color: white;
+}
+
+#titleBG {
+    background: rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+}
+
+/* Catégories */
+#meals
+{
+    padding-top: 10%;
+}
+.row {
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+/*Transitions catégories */
+.col-lg-3 {
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+.col-lg-3:hover
+{
+    transform: scale(1.1);
+}
+
+/* Tableau catégories */
+table
+{
+    margin-top: 10%;
+}
+
+/* FOOTER */
+#pageUp {
+    float: right;
+}
